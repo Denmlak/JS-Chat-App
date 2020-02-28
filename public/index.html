@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+	<script defer src="../socket.io/socket.io.js"></script>
+	<script defer src="../js/script.js"></script>
+	<script src='../js/inputEmoji.js'></script>
+	<style>
+		body{
+			background-color: #d8eddc;
+			}
+			.container{
+				width: 50%;	
+			}
+			header{
+				height: 100px;
+				margin-bottom: 50px;
+				color: #fff;
+				background-color: #2e8cc2;
+				text-align: center;
+				line-height: 90px;
+				font-family: 'Roboto Mono', monospace;
+				font-size: 2em;
+
+			}
+			.chat-area{
+				height: 300px;
+				border:#CED4DA solid 1px;
+				border-radius: 5px;
+				overflow-y: auto;
+				padding: 10px;
+				background-color: #fff;
+			}
+			@media (max-width: 600px){
+				.container{
+					width: 80%;
+				}
+			}
+	</style>		
+</head>
+<body>
+	<header>JS Chat App</header>
+	<div class="container"> 
+		<div class="chat-area" id="chat-area"></div>
+		<form action="" class="input-group mb-3" id="send-message">
+			<input type="text" class="form-control"  autocomplete="off" id="message-input" placeholder="Please enter your message...">
+		<button type="submit" class="btn btn-outline-secondary" id="send-button">Send</>	
+	</form>
+
+	</div>
+</div>
+<script>
+ $(document).ready(function(){
+	  	 $('#message-input').emoji({
+	  	place: 'after',
+	  	listCSS:{position: 'absolute', border: '1px solid gray', 'background-color': '#fff', display: 'none', right: 50, bottom:40}
+	  });
+});
+</script>
+</body>
+</html>
