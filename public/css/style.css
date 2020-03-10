@@ -1,0 +1,53 @@
+body{
+background-color: #d8eddc;
+}
+.container{
+	width: 50%;	
+display: flex;
+}
+header{
+	height: 100px;
+	margin-bottom: 50px;
+	color: #fff;
+	background-color: #2e8cc2;
+	text-align: center;
+	line-height: 90px;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 2em;
+
+}
+
+.users-online{
+	margin-right: 2px;
+	flex: 0 0 20%;
+	height: 300px;
+	border:#CED4DA solid 1px;
+	border-radius: 5px;
+			
+	background-color: #fff;
+	
+}
+.users-field{
+	padding: 5px;
+	height: 254px;
+	overflow-y: auto;
+}
+.users-header{
+	border-radius: 5px;
+	text-align: center;
+	background-color: #2e8cc2;
+	color: #fff;
+	padding: 0;
+	padding: 10px 0;
+}
+.chat-wrap{
+	flex: 0 0 80%;
+}
+.chat-area{
+	height: 300px;
+	border:#CED4DA solid 1px;
+	border-radius: 5px;
+	overflow-y: auto;
+	padding: 10px;
+	background-color: #fff;
+}

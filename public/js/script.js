@@ -2,6 +2,7 @@ const socket= io();
 const sendButton=document.getElementById('send-button');
 const input=document.getElementById('message-input');
 const chatArea=document.getElementById('chat-area');
+let onlineUsers=document.getElementById('users-field');
 let nameIsTaken=false;
 
 socket.on('chat-message', data=>{
@@ -12,6 +13,11 @@ socket.on('chat-message', data=>{
 socket.on('user-joined', name=>{
 	appendMessage(`System : ${name} joined chat`);
 	chatArea.scrollTop = chatArea.scrollHeight;
+	appendOnlineUser(name);	
+});
+
+socket.on('users-online', users=>{
+	appendOnlineUser(users);
 });
 
 socket.on('user-disconnected', name=>{
@@ -20,6 +26,7 @@ socket.on('user-disconnected', name=>{
 		}
 	appendMessage(`System : ${name} left chat`);
 	chatArea.scrollTop = chatArea.scrollHeight;
+	removeUser(name);
 });
 
 socket.on('name-taken', nameTaken =>{
@@ -46,31 +53,49 @@ sendButton.addEventListener('click', e => {
 	input.value='';
 });
 
+const appendOnlineUser= users =>{
+	onlineUsers.innerHTML='';
+	for(const key in users){
+		let user= users[key];
+		let messageElement= document.createElement('div');
+		messageElement.setAttribute("id", user);
+		messageElement.style.cssText = "color: #4d5f66";
+		messageElement.innerText = user;
+		onlineUsers.append(messageElement);	
+	}
+};
+
+const removeUser= name=>{
+	const removeName= document.getElementById(name);
+	removeName.remove();
+};
+
 const appendMessage= message =>{
 	const messageElement= document.createElement('div');
 	messageElement.style.cssText = "color: #4d5f66";
 	messageElement.innerText= message;
 	chatArea.append(messageElement);
+};
 
-}
 const appenSelfMessage= message =>{
 	const messageElement= document.createElement('div');
 	messageElement.style.cssText = "color: #36a8bf;";
 	messageElement.innerText= message;
 	chatArea.append(messageElement);	
-}
+};
+
 const appendUserMessage= message =>{
 	const messageElement= document.createElement('div');
 	messageElement.style.cssText = "color: #2b8a22";
 	messageElement.innerText=message;
 	chatArea.append(messageElement);	
-}
+};
 
 let name="";
-while(name == null || name == "" ){
+while(name == null || name == "" || name.length > 8){
 	
-		name= prompt('Enter your name:');	
-	  }
+		name= prompt('Enter your name (max 8 characters):');	
+	  };
 socket.emit('new-user', name);
 
 
