@@ -2,8 +2,8 @@ const express= require('express');
 const app= express();
 const server= require('http').Server(app);
 const io= require('socket.io')(server);
-const port= process.env.PORT || 3000;
-const users= {};
+const port= 3000 || process.env.PORT;
+let users= {};
 
 app.use(express.static('public'));
 app.get('/public', (req,res) =>{
@@ -21,6 +21,7 @@ io.on('connection', socket=>{
 		socket.emit('you-joined', name);
 		users[socket.id]= name;
 		socket.broadcast.emit('user-joined', name);
+		io.sockets.emit('users-online', users);
 	})
 	socket.on('message-input', message=>{
 		socket.broadcast.emit('chat-message', {message:message, name: users[socket.id]});
