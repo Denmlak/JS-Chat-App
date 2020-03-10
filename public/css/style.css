@@ -51,3 +51,9 @@ header{
 	padding: 10px;
 	background-color: #fff;
 }
+
+@media (max-width: 600px){
+				.container{
+					width: 80%;
+				}
+			}
