@@ -11,3 +11,9 @@ Chat app build with JavaScript and Node.js.
   <li>Express.js</li>
   <li>socket.io</li>
 </ul>
+
+<h4>Features</h4>
+<ul>
+<li>Emojis</li>
+<li>Online users</li>
+</ul>
