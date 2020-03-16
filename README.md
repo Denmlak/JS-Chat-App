@@ -6,6 +6,7 @@ Chat app build with JavaScript and Node.js.
 <ul>
 <li>Html5</li>
 <li>CSS3</li>
+  <li>Bootstrap 4</li>
 <li>JavaScript</li>
 <li>Node.js</li>
   <li>Express.js</li>
