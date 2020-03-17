@@ -1,6 +1,6 @@
 # JS-Chat-App
 
-Chat app build with JavaScript and Node.js deployed to <a href="https://www.heroku.com/">Heroku</a>.
+Chat app deployed to <a href="https://www.heroku.com/">Heroku</a>.
 
 <h4>Technologies Used:</h4>
 <ul>
