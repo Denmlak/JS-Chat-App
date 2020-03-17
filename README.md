@@ -18,3 +18,11 @@ Chat app build with JavaScript and Node.js deployed to <a href="https://www.hero
   <li>Emojis (<a href="https://ili4x.github.io/inputEmoji/demo.html">inputEmoji</a>)</li>
 <li>Online users</li>
 </ul>
+
+<h4>Setup and usage:</h4>
+<ul>
+<li>git clone </li>
+<li>npm install</li>
+  <li>npm start</li>
+<li>Browse to localhost:3000</li>
+</ul>
