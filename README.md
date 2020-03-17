@@ -15,6 +15,6 @@ Chat app build with JavaScript and Node.js.
 
 <h4>Features</h4>
 <ul>
-  <li>Emojis (inputEmoji <a>https://ili4x.github.io/inputEmoji/demo.html</a>)</li>
+  <li>Emojis (<a href="https://ili4x.github.io/inputEmoji/demo.html">inputEmoji</a>)</li>
 <li>Online users</li>
 </ul>
