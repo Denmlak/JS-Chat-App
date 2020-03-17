@@ -1,6 +1,6 @@
 # JS-Chat-App
 
-Chat app deployed to <a href="https://www.heroku.com/">Heroku</a>.
+A real time Chat app deployed to <a href="https://www.heroku.com/">Heroku</a>.
 
 <h4>Technologies Used:</h4>
 <ul>
