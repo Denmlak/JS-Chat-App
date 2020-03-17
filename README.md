@@ -21,7 +21,7 @@ Chat app build with JavaScript and Node.js deployed to <a href="https://www.hero
 
 <h4>Setup and usage:</h4>
 <ul>
-<li>git clone </li>
+  <li>git clone <a href="https://github.com/Denmlak/JS-Chat-App">https://github.com/Denmlak/JS-Chat-App</a></li>
 <li>npm install</li>
   <li>npm start</li>
 <li>Browse to localhost:3000</li>
